@@ -26,11 +26,24 @@ And we certainly don't get much help from industry in this regard.
 [而且我们肯定没有在这方面从行业中得到太多帮助。]
 
 Introductions to object orientation tacitly promote such design, because they often show examples composed of graphs of relatively long-lived objects that happily call mutator methods on each other, which can be dangerous. 
-[采用面向对象默默提升这样的设计，应为他们经常会展示一些用相对存活时间很长的对象的图形组成的例子，]
-However, with astute test-driven design, particularly when being sure to "Mock Roles, not Objects", unnecessary mutability can be designed away.
+[采用面向对象默默提升这样的设计，因为他们经常会展示一些用相对存活时间很长的对象互相开心的调用赋值函数的图形组成的例子，这样会很危险。]
 
-The net result is a design that typically has better responsibility allocation with more numerous, smaller functions that act on arguments passed into them, rather than referencing mutable member variables. There will be fewer defects, and furthermore they will often be simpler to debug, because it is easier to locate where a rogue value is introduced in these designs than to otherwise deduce the particular context that results in an erroneous assignment. This adds up to a much higher degree of referential transparency, and positively nothing will get these ideas as deeply into your bones as learning a functional programming language, where this model of computation is the norm.
+However, with astute test-driven design, particularly when being sure to "Mock Roles, not Objects", unnecessary mutability can be designed away.
+[然而，采用精明的测试驱动设计，特别是保证"模仿规则，而不是对象"，不必要的可变性才能从设计中去除。]
+
+The net result is a design that typically has better responsibility allocation with more numerous, smaller functions that act on arguments passed into them, rather than referencing mutable member variables. 
+[最终结果是一个设计，通常通过更多更小的函数来拥有更好的责任分配，这些函数针对传入的参数进行运算，而不是引用可变的成员变量。]
+
+There will be fewer defects, and furthermore they will often be simpler to debug, because it is easier to locate where a rogue value is introduced in these designs than to otherwise deduce the particular context that results in an erroneous assignment. 
+[这样将会有更少的缺陷，此外这些缺陷通常很容易调试，因更容易定位一个不合适的数值在哪儿被引入了这些设计中，而不是推测一个具体的能导致错误指派的上下文。]
+This adds up to a much higher degree of referential transparency, and positively nothing will get these ideas as deeply into your bones as learning a functional programming language, where this model of computation is the norm.
+[这个达到一个更高程度的应用透明度，并且绝对没有什么能比学习一门函数编程语言得到的观念更深刻了，在那里这个计算模型是规范。]
 
 Of course, this approach is not optimal in all situations. For example, in object-oriented systems this style often yields better results with domain model development (i.e., where collaborations serve to break down the complexity of business rules) than with user-interface development.
-
-Master the functional programming paradigm so you are able to judiciously apply the lessons learned to other domains. Your object systems (for one) will resonate with referential transparency goodness and be much closer to their functional counterparts than many would have you believe. In fact, some would even assert that the apex of functional programming and object orientation are merely a reflection of each other, a form of computational yin and yang.
+[当然了，这种方法并不是在所有情况下都是最理想的。例如，在面向对象系统中这样经常会在领域模型开发(就是说，那些合作减少业务规则复杂性的地方)产生用户接口开发更好的效果。]
+Master the functional programming paradigm so you are able to judiciously apply the lessons learned to other domains. 
+[掌握函数编成范式你就能够明智的应用这些经验教训到其他领域。]
+Your object systems (for one) will resonate with referential transparency goodness and be much closer to their functional counterparts than many would have you believe. 
+[你的目标系统(就一个)将会和引用透明的好处共振并且离他们的功能对应方比你相信的更近。]
+In fact, some would even assert that the apex of functional programming and object orientation are merely a reflection of each other, a form of computational yin and yang.
+[事实上，一些人甚至断言，函数式编程和面向对象的顶点仅仅是反映对方，计算阴阳的一种形式。]
