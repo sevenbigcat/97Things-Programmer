@@ -1,49 +1,49 @@
 Functional programming has recently enjoyed renewed interest from the mainstream programming community. 
-[函数编程近期重新吸引了主流编程社区的兴趣]
+[函数式编程近期重新吸引了主流编程社区的兴趣]
 
 Part of the reason is because emergent properties of the functional paradigm are well positioned to address the challenges posed by our industry's shift toward multi-core. 
-[其中部分原因是因为函数范例(functional paradigm)的突变性质(emergent properties)很好的解决了我们行业在向多核转变所面临的挑战。]
+[其中部分原因是因为函数式编程范式(functional paradigm)的突变性质(emergent properties)很好的解决了我们行业在向多核转变所面临的挑战。]
 
 However, while that is certainly an important application, it is not the reason this piece admonishes you to know thy functional programming.
-[然而，就算那的确是一个重要应用，这也不是告诫你要了解函数编程。]
+[然而，就算那的确是一个重要应用，这也不是告诫你要了解函数式编程的原因。]
 
 Mastery of the functional programming paradigm can greatly improve the quality of the code you write in other contexts. If you deeply understand and apply the functional paradigm, your designs will exhibit a much higher degree of referential transparency.
-[掌握函数编成范式可以极大地提高你在其他情况下所写的代码的质量。 如果你深刻理解并且应用函数范例，那么你的设计将展现出更高程度的引用透明度(引用透明度)。]
+[掌握函数式编程范式可以极大地提高你在其他情况下所写的代码的质量。 如果你深刻理解并且应用函数式编程范式，那么你的设计将展现出更高程度的引用透明性。]
 
 Referential transparency is a very desirable property: It implies that functions consistently yield the same results given the same input, irrespective of where and when they are invoked. That is, function evaluation depends less — ideally, not at all — on the side effects of mutable state.
-[引用透明度是一种非常令人向往的特质：它意味着不管函数什么时间或者在哪里被调用，函数根据同样的输入始终都会生成同样的结果。就是说，函数评估依赖的更少了-理想地，但绝不是-在不稳定状态方面的副作用。]
+[引用透明性是一种非常令人向往的特质：它意味着不管函数什么时间或者在哪里被调用，函数根据同样的输入始终都会生成同样的结果。就是说，函数评估时在不稳定状态方面的副作用上的依赖更少了(理想地，根本不是)。]
 
 A leading cause of defects in imperative code is attributable to mutable variables. 
-[在赶工代码中的缺陷的主要原因在于善变的变量。]
+[在命令式编程中的缺陷的主要原因在于多变的变量。]
 
 Everyone reading this will have investigated why some value is not as expected in a particular situation. 
 [每个读代码的人都将已经调查为什么某些值在某种情况下和期望的值不同。]
 
 Visibility semantics can help to mitigate these insidious defects, or at least to drastically narrow down their location, but their true culprit may in fact be the providence of designs that employ inordinate mutability.
-[可见的语义能够帮助降低这些隐秘的缺陷，或者至少大幅缩小他们的位置，但是真正的罪魁祸首可能实际是使用了过多的可变性的设计的宿命。]
+[可见性语义能够帮助降低这些隐秘的缺陷，或者至少大幅缩小他们的位置，但是真正的罪魁祸首实际上可能是设计中使用了过多的可变性。]
 
 And we certainly don't get much help from industry in this regard. 
 [而且我们肯定没有在这方面从行业中得到太多帮助。]
 
 Introductions to object orientation tacitly promote such design, because they often show examples composed of graphs of relatively long-lived objects that happily call mutator methods on each other, which can be dangerous. 
-[采用面向对象默默提升这样的设计，因为他们经常会展示一些用相对存活时间很长的对象互相开心的调用赋值函数的图形组成的例子，这样会很危险。]
+[采用面向对象默默的提升了这样的设计，因为他们经常会展示一些图形的例子，这些图形由相对生存周期很长的对象互相开心的调用赋值函数组成，这样会很危险。]
 
 However, with astute test-driven design, particularly when being sure to "Mock Roles, not Objects", unnecessary mutability can be designed away.
 [然而，采用精明的测试驱动设计，特别是保证"模仿规则，而不是对象"，不必要的可变性才能从设计中去除。]
 
 The net result is a design that typically has better responsibility allocation with more numerous, smaller functions that act on arguments passed into them, rather than referencing mutable member variables. 
-[最终结果是一个设计，通常通过更多更小的函数来拥有更好的责任分配，这些函数针对传入的参数进行运算，而不是引用可变的成员变量。]
+[最终结果应该是一个设计，它通常通过更多更小的函数达到更好的责任分配，这些函数针对传入的参数进行运算，而不是引用可变的成员变量。]
 
 There will be fewer defects, and furthermore they will often be simpler to debug, because it is easier to locate where a rogue value is introduced in these designs than to otherwise deduce the particular context that results in an erroneous assignment. 
 [这样将会有更少的缺陷，此外这些缺陷通常很容易调试，因更容易定位一个不合适的数值在哪儿被引入了这些设计中，而不是推测一个具体的能导致错误指派的上下文。]
 This adds up to a much higher degree of referential transparency, and positively nothing will get these ideas as deeply into your bones as learning a functional programming language, where this model of computation is the norm.
-[这个达到一个更高程度的应用透明度，并且绝对没有什么能比学习一门函数编程语言得到的观念更深刻了，在那里这个计算模型是规范。]
+[这样能达到一个更高程度的引用透明性，并且绝对没有什么能比学习一门函数式编程语言得到的观念更深刻了，因为在那里这个计算模型是规范。]
 
 Of course, this approach is not optimal in all situations. For example, in object-oriented systems this style often yields better results with domain model development (i.e., where collaborations serve to break down the complexity of business rules) than with user-interface development.
-[当然了，这种方法并不是在所有情况下都是最理想的。例如，在面向对象系统中这样经常会在领域模型开发(就是说，那些合作减少业务规则复杂性的地方)产生用户接口开发更好的效果。]
+[当然了，这种方法并不是在所有情况下都是最理想的。例如，在面向对象系统中这样的风格经常会在领域模型开发(就是说，那些合作减少业务规则复杂性的地方)产生相对于用户接口开发更好的效果。]
 Master the functional programming paradigm so you are able to judiciously apply the lessons learned to other domains. 
-[掌握函数编成范式你就能够明智的应用这些经验教训到其他领域。]
+[掌握函数式编程范式你就能够明智的应用这些经验教训到其他领域。]
 Your object systems (for one) will resonate with referential transparency goodness and be much closer to their functional counterparts than many would have you believe. 
-[你的目标系统(就一个)将会和引用透明的好处共振并且离他们的功能对应方比你相信的更近。]
+[你的目标系统(就一个)将会和引用透明性的优点共振并且和他们的功能对等的系统比你相信的更近。]
 In fact, some would even assert that the apex of functional programming and object orientation are merely a reflection of each other, a form of computational yin and yang.
 [事实上，一些人甚至断言，函数式编程和面向对象的顶点仅仅是反映对方，计算阴阳的一种形式。]
